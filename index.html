@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="calculator">
+        <div class="box">
+
+        <div class="buttons">
+          <h2 id="value"></h2>
+        <!-- claear -->
+          <span class="button" id="ochirish">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">clear</p>
+            </div>
+          </span>
+          <!-- / -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">/</p>
+            </div>
+          </span>
+          <!-- * -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">*</p>
+            </div>
+          </span>
+          <!-- 7 -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">7</p>
+            </div>
+          </span>
+          <!-- 8 -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">8</p>
+            </div>
+          </span>
+          <!-- 9 -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">9</p>
+            </div>
+          </span>
+                    <!-- - -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">-</p>
+            </div>
+          </span>
+                    <!-- 4 -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">4</p>
+            </div>
+          </span>
+                    <!-- 5 -->
+                    <span class="button">
+                      <div class="button__content">
+                        <div class="button__icon">
+              
+                        </div>
+                        <p class="button__text">5</p>
+                      </div>
+                    </span>
+                              <!-- 6 -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">6</p>
+            </div>
+          </span>
+                    <!-- + -->
+                    <span class="button" id="plyus">
+                      <div class="button__content">
+                        <div class="button__icon">
+              
+                        </div>
+                        <p class="button__text">+</p>
+                      </div>
+                    </span>
+                                            <!-- 3 -->
+                                            <span class="button">
+                                              <div class="button__content">
+                                                <div class="button__icon">
+                                      
+                                                </div>
+                                                <p class="button__text">1</p>
+                                              </div>
+                                            </span>
+                    <var>          <!-- 1 -->
+                      <span class="button" id="my1" onchange="nena()">
+                        <div class="button__content">
+                          <div class="button__icon">
+                
+                          </div>
+                          <p class="button__text">2</p>
+                        </div>
+                      </span>
+                              <!-- 3 -->
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">3</p>
+            </div>
+          </span></var>
+        
+                    <!-- 0 -->
+
+              <!-- . -->
+          <span class="button">
+            <div class="button__content">
+      
+              <p class="button__text">.</p>
+            </div>
+          </span>
+          <span class="button">
+            <div class="button__content">
+              <div class="button__icon">
+    
+              </div>
+              <p class="button__text">0</p>
+            </div>
+          </span>
+                    <!-- 00 -->
+                    <span class="button o0lar">
+                      <div class="button__content">
+             
+                        <p class="button__text o0lar">00</p>
+                      </div>
+                    </span>
+                    <!-- = -->
+          <span class="button">
+            <div class="button__content">
+              <p class="button__text" id="javob">=</p>
+            </div>
+          </span>
+        </div>
+    </div>
+      </div>
+      <script>
+        let buttons = document.querySelector('.buttons')
+        let btn = buttons.querySelectorAll('p')
+        let value = document.getElementById('value')
+        for (let i = 0; i < btn.length; i++) {
+          btn[i].addEventListener('click', function() {
+            if (this.innerHTML == "=") {
+              value.innerHTML = eval(value.innerHTML)
+            }
+            else{
+              if (this.innerHTML == 'clear') {
+                value.innerHTML = ""
+              }else{
+                value.innerHTML += this.innerHTML
+              }
+            }
+          })
+        }
+        document.onkeydown = function(e){
+    e = e || window.event;
+    var key = e.which || e.keyCode;
+    if(key===49){
+        value.innerHTML += "1"
+    }
+    if(key===50){
+        value.innerHTML += "2"
+    }
+    if(key===51){
+        value.innerHTML += "3"
+    }
+    if(key===52){
+        value.innerHTML += "4"
+    }
+    if(key===53){
+        value.innerHTML += "5"
+    }
+    if(key===54){
+        value.innerHTML += "6"
+    }
+    if(key===55){
+        value.innerHTML += "7"
+    }
+    if(key===56){
+        value.innerHTML += "8"
+    }
+    if(key===57){
+        value.innerHTML += "9"
+    }
+    if(key===48){
+        value.innerHTML += "0"
+    }
+    if(key===185){
+        value.innerHTML += "+"
+    }
+    if(key===189){
+        value.innerHTML += "-"
+    }
+    if(key===8){
+        value.innerHTML += value.length -1
+    }
+    if(key===13){
+      value.innerHTML = eval(value.innerHTML)
+
+    }
+    if(key===68){
+      value.innerHTML = ""
+    }
+}
+      </script>
+</body>
+</html>
